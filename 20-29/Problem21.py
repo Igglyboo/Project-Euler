@@ -27,8 +27,8 @@ def sum_of_divisors(n):
     for i in range(2, int(sqrt(n)) + 1):
         if n % i == 0:
             div_sum += i
-            if n//i != i:
-                div_sum += n//i
+            if n // i != i:
+                div_sum += n // i
     return div_sum
 
 
