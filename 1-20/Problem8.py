@@ -6,6 +6,7 @@ def timer(function):
         start = clock()
         print(function(*args, **kwargs))
         print("Solution took: %f seconds." % (clock() - start))
+
     return wrapper
 
 
