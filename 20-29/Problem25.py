@@ -1,5 +1,4 @@
 from time import clock
-from itertools import permutations
 
 
 def timer(function):
@@ -13,9 +12,20 @@ def timer(function):
 
 @timer
 def find_answer():
-    for index, permutation in enumerate(permutations("0123456789")):
-        if index == 999999:
-            return int("".join(permutation))
+    for index, value in enumerate(fibonacci_generator()):
+        if len(str(value)) >= 1000:
+            return index + 1
+
+
+def fibonacci_generator():
+    a = 1
+    b = 2
+    yield 1
+    yield 1
+    yield 2
+    while True:
+        a, b = b, a + b
+        yield b
 
 
 if __name__ == "__main__":
