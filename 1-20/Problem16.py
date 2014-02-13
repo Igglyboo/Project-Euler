@@ -12,7 +12,7 @@ def timer(function):
 
 @timer
 def find_answer():
-    return sum(map(int, str(2**1000)))
+    return sum(map(int, str(2 ** 1000)))
 
 
 if __name__ == "__main__":
