@@ -1,5 +1,4 @@
 from time import clock
-from math import factorial
 
 
 def timer(function):
@@ -14,10 +13,10 @@ def timer(function):
 @timer
 def find_answer():
     total = 0
-    for i in range(10, 400000):
-        current = [int(x) for x in str(i)]
-        if i == sum(map(factorial, current)):
-            total += i
+    for i in range(1000000):
+        if str(i) == str(i)[::-1]:
+            if bin(i)[2:] == bin(i)[:1:-1]:
+                total += i
 
     return total
 
