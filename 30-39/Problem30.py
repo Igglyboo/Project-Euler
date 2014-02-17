@@ -1,5 +1,4 @@
 from time import clock
-from itertools import product
 
 
 def timer(function):
@@ -14,8 +13,8 @@ def timer(function):
 @timer
 def find_answer():
     answer = 0
-    for num in range(1, 1000000):
-        total = sum(map(lambda x: int(x)**5, str(num)))
+    for num in range(2, 1000000):
+        total = sum(map(lambda x: int(x) ** 5, str(num)))
         if total == num:
             answer += num
 
