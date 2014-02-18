@@ -15,7 +15,7 @@ def timer(function):
 def find_answer():
     primes = sieve(1000000)
     primes.remove(0)
-    poly = lambda x, y, z: z**2 + x*z + y
+    poly = lambda x, y, z: z ** 2 + x * z + y
     maximum = 0
     for a in range(-1000, 1001):
         for b in range(-1000, 1001):
