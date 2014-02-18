@@ -14,13 +14,11 @@ def timer(function):
 def find_answer():
     pents = pentagonals(5000)
     pents_membership = set(pents)
-    differnces = []
     for i in range(len(pents) - 1):
         for j in range(i, len(pents) - 1):
             if pents[i] + pents[j] in pents_membership:
                 if abs(pents[i] - pents[j]) in pents_membership:
-                    differnces.append(abs(pents[i] - pents[j]))
-    return min(differnces)
+                    return abs(pents[i] - pents[j])
 
 
 def pentagonals(amount):
