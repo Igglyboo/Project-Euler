@@ -46,6 +46,7 @@ def distinct_prime_factors(n):
 
     return factors
 
+
 if __name__ == "__main__":
     find_answer()
 
