@@ -1,16 +1,7 @@
-from math import sqrt
-
-
 def sieve(upper_bound):
-    primes = list(range(2, upper_bound + 1))
-    primes[2::2] = [0] * ((len(primes) - 3) // 2 + 1)
-    limit = sqrt(upper_bound)
-
-    for p in primes:
-        if p > limit:
-            break
-        elif p:
-            for i in range(p * p - 2, upper_bound - 1, p + p):
-                primes[i] = 0
-
-    return [x for x in primes if x]
+    prime = [False, False, True] + [True, False] * (upper_bound // 2)
+    for p in range(3, int(upper_bound ** .5) + 1, 2):
+        if prime[p]:
+            for i in range(p * p, upper_bound, 2 * p):
+                prime[i] = False
+    return [p for p in range(2, upper_bound) if prime[p]]
